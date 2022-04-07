@@ -349,3 +349,5 @@ addEmployee = () => {
             });
         });
 };
+// update an employee function
+updateEmployee = () => {
