@@ -412,5 +412,5 @@ updateEmployee = () => {
     });
 };
 
-// function to update an employee 
-updateEmployee = () => {
+// function to update an employee manager
+updateManager = () => {
