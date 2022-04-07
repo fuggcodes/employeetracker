@@ -263,33 +263,59 @@ addRole = () => {
 // function to add employees
 addEmployee = () => {
     inquirer.prompt([
-      {
-        type: 'input',
-        name: 'fistName',
-        message: "What is the employee's first name?",
-        validate: addFirst => {
-          if (addFirst) {
-              return true;
-          } else {
-              console.log('Please enter a first name');
-              return false;
-          }
+        {
+            type: 'input',
+            name: 'fistName',
+            message: "What is the employee's first name?",
+            validate: addFirst => {
+                if (addFirst) {
+                    return true;
+                } else {
+                    console.log('Please enter a first name');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'lastName',
+            message: "What is the employee's last name?",
+            validate: addLast => {
+                if (addLast) {
+                    return true;
+                } else {
+                    console.log('Please enter a last name');
+                    return false;
+                }
+            }
         }
-      },
-      {
-        type: 'input',
-        name: 'lastName',
-        message: "What is the employee's last name?",
-        validate: addLast => {
-          if (addLast) {
-              return true;
-          } else {
-              console.log('Please enter a last name');
-              return false;
-          }
-        }
-      }
     ])
-      .then(answer => {
-      const params = [answer.fistName, answer.lastName]
-  
+        .then(answer => {
+            const params = [answer.fistName, answer.lastName]
+
+            // use role table to grab roles
+            const roleSql = `SELECT role.id, role.title FROM role`;
+
+            connection.query(roleSql, (err, data) => {
+                if (err) throw err;
+
+                const roles = data.map(({ id, title }) => ({ name: title, value: id }));
+
+                inquirer.prompt([
+                    {
+                        type: 'list',
+                        name: 'role',
+                        message: "What is the employee's role?",
+                        choices: roles
+                    }
+                ])
+                    .then(roleChoice => {
+                        const role = roleChoice.role;
+                        params.push(role);
+
+                        const managerSql = `SELECT * FROM employee`;
+
+                        connection.query(managerSql, (err, data) => {
+                            if (err) throw err;
+
+                            const managers = data.map(({ id, first_name, last_name }) => ({ name: first_name + " " + last_name, value: id }));
