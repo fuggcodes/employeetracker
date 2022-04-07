@@ -20,3 +20,13 @@ const connection = mysql.createConnection({
     console.log('connected as id ' + connection.threadId);
     afterConnection();
   });
+
+// function after connected and initial image shows 
+afterConnection = () => {
+    console.log("***********************************")
+    console.log("*                                 *")
+    console.log("*        EMPLOYEE MANAGER         *")
+    console.log("*                                 *")
+    console.log("***********************************")
+    promptUser();
+  };
