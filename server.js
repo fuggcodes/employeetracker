@@ -115,7 +115,7 @@ const promptUser = () => {
         });
 };
 
-// function for departments 
+// function for all departments 
 showDepartments = () => {
     console.log('Showing all departments...\n');
     const sql = `SELECT department.id AS id, department.name AS department FROM department`;
@@ -127,7 +127,7 @@ showDepartments = () => {
     });
 };
 
-// function for roles 
+// function for all roles 
 showRoles = () => {
     console.log('Showing all roles...\n');
 
@@ -142,7 +142,7 @@ showRoles = () => {
     })
 };
 
-// function for employees 
+// function for all employees 
 showEmployees = () => {
     console.log('Showing all employees...\n'); 
     const sql = `SELECT employee.id, 
@@ -163,3 +163,32 @@ showEmployees = () => {
       promptUser();
     });
   };
+
+// function to add departments
+addDepartment = () => {
+    inquirer.prompt([
+      {
+        type: 'input', 
+        name: 'addDept',
+        message: "What department do you want to add?",
+        validate: addDept => {
+          if (addDept) {
+              return true;
+          } else {
+              console.log('Please enter a department');
+              return false;
+          }
+        }
+      }
+    ])
+      .then(answer => {
+        const sql = `INSERT INTO department (name)
+                    VALUES (?)`;
+        connection.query(sql, answer.addDept, (err, result) => {
+          if (err) throw err;
+          console.log('Added ' + answer.addDept + " to departments!"); 
+  
+          showDepartments();
+      });
+    });
+  };  
