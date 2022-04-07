@@ -349,6 +349,7 @@ addEmployee = () => {
             });
         });
 };
+
 // update an employee function
 updateEmployee = () => {
     // get employees from employee table 
@@ -410,3 +411,6 @@ updateEmployee = () => {
             });
     });
 };
+
+// function to update an employee 
+updateEmployee = () => {
