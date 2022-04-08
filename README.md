@@ -13,6 +13,8 @@ Run "node server.js" in terminal to see it through.
     npm install console.table
     npm install inquirer inquirer-confirm
     
+## walkthrough video
+https://drive.google.com/file/d/16viYbpJX3BoMv1kYjItd9hEUFPqV_rit/view
     
 
 ## usage
