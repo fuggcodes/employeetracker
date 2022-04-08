@@ -2,7 +2,8 @@
 
 
 ## description
-The challenge this week is to build a command-line application to manage a company's employee database, using Node.js, Inquirer, and MySQL.
+built a command-line application to manage a company's employee database.
+Run "node server.js" in terminal to see it through.
   
 
 ## installation
@@ -15,4 +16,6 @@ The challenge this week is to build a command-line application to manage a compa
     
 
 ## usage
-Run on command line node server.js
+Node.js
+Inquirer
+MySQL
