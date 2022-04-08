@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fuggcodes/employeetracker"
+    "url": "git+https://github.com/fuggcodes/employeetracker.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/fuggcodes/employeetracker"
+    "url": "https://github.com/fuggcodes/employeetracker/issues"
   },
-  "homepage": "https://github.com/fuggcodes/employeetracker",
+  "homepage": "https://github.com/fuggcodes/employeetracker#readme",
   "dependencies": {
     "console.table": "^0.10.0",
     "dotenv": "^14.2.0",

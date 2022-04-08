@@ -1,11 +1,11 @@
 # employeetracker
 
 
-## Description
+## description
 The challenge this week is to build a command-line application to manage a company's employee database, using Node.js, Inquirer, and MySQL.
   
 
-## Installation
+## installation
     npm init
     npm install
     npm install mysql mysql2
@@ -14,5 +14,5 @@ The challenge this week is to build a command-line application to manage a compa
     
     
 
-## Usage
+## usage
 Run on command line node server.js
