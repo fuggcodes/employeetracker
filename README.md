@@ -14,8 +14,7 @@ Run "node server.js" in terminal to see it through.
     npm install inquirer inquirer-confirm
     
 ## walkthrough video
-https://drive.google.com/file/d/16viYbpJX3BoMv1kYjItd9hEUFPqV_rit/view
-    
+https://drive.google.com/file/d/138kDtI_W_MJGOKaVwY9KKPHS4nqQ_xaW/view?usp=sharing
 
 ## usage
 Node.js
